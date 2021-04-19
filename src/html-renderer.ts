@@ -17,7 +17,7 @@ const createElem = (col: number) => {
     return elem;
   };
   
-  export const paint = (game: number[][], lives: number, score: number) => {
+  export const paint = (game: Array<number[]>, lives: number, score: number) => {
     document.body.innerHTML = `Lives: ${lives}, Score: ${score}`;
   
     game.forEach(row => {

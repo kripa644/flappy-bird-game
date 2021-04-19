@@ -22,8 +22,8 @@ const gamePipes$ = interval(500)
 .pipe(
   scan<any, any>(acc =>
       (acc.length < 2 ? [...acc, createPipes(gameSize)] : acc)
-        .filter((c: PipeProps[]) => c.some((e: any) => e.y > 0))
-        .map((cols: PipeProps[]) => cols.map((e: any) => gamePipe(e.x, e.y - 1))),
+        .filter((c: PipeProps[]) => c.some((e: PipeProps) => e.y > 0))
+        .map((cols: PipeProps[]) => cols.map((e: PipeProps) => gamePipe(e.x, e.y - 1))),
     [createPipes(gameSize / 2), createPipes(gameSize)])
 );
 
